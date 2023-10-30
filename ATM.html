@@ -1,0 +1,66 @@
+#include <iostream>
+using namespace std;
+int balance = 1400;
+int deposit = 0;
+int withdraw = 0;
+int password = 0000;
+void show() {
+	cout << "***************   WELCOOME TO ALAHLI BANK   ********************************** \n";
+	cout << " 1: balance \n";
+	cout << " 2: withdraw \n";
+	cout << " 3: deposit \n";
+	cout << " 4: exit \n";
+	cout << "***************************************************************************\n";
+	
+}
+void print() {
+	int choice;
+	do {
+		cout << "Enter your password to choose your processing \n";
+		cin >> password;
+		if (password == 0000) {
+
+		}
+		else {
+			cout << " Incorrect password \n";
+			break;
+		}
+		cout << "Enter your choice\n";
+		cin >> choice;
+		switch (choice)
+		{
+		case 1:
+			cout << "Your balance " << balance << endl;
+			break;
+		case 2:
+			cout << "Note your balance " << balance << endl;
+			cout << " Enter Amount \n";
+			cin >> withdraw;
+			if (withdraw > balance) {
+				cout << "Sorry you do not have money \n";
+			}
+			else {
+	
+				balance -= withdraw;
+				cout << " your balance now " << balance << endl;
+				break;
+		case 3:
+			cout << " Your balance now " << balance << endl;
+			cout << " Enter amount \n";
+			cin >> deposit;
+			balance += deposit;
+			cout << " your balance now " << balance << endl;
+			break;
+		case 4:
+			cout << " Thank you \n";
+			}
+		}
+	} while (choice < 4);
+}
+
+	int main()
+	{
+		show();
+		print();
+		return 0;
+	}
