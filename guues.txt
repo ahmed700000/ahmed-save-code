@@ -1,0 +1,27 @@
+
+
+
+#include <iostream>
+#include <time.h>
+using namespace std;
+int main() {
+	int dice1, dice2, sum, usergues, attemp = 0;
+	srand(time(0));
+	dice1 = rand() % 6 + 1;
+	dice2 = rand() % 6 + 1;
+	sum = dice1 + dice2;
+	cout << "Enter your guess for sum\n";
+	cin >> usergues;
+	while (sum != usergues && attemp < 4) {
+		cout << "Bad gues - Try again\n";
+		cout << "Enter your guess for the sum\n";
+		cin >> usergues;
+		attemp++;
+	}if (attemp == 0) {
+		cout << "you have reached the maximum try for the sum\n";
+		cout << " The sum it was" << sum;
+	}
+	else {
+		cout << "Good gues - congrats\n";
+	}
+	}
